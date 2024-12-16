@@ -1,13 +1,38 @@
 .text-fondo-1{
-    color:black;
+    color:rgb(255, 255, 255);
     font-weight: 900;
+    
+    
 }
 
 .text-fondo-2{
-    color:rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
     font-weight: 500;
 }
 
 .text-parrafo{
     font-weight: 200;
+}
+
+#tarjeta-titulo{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#tarjeta-cuerpo{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:lighter;
+}
+
+#titulos-generales{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:normal;
+    font-size: 20px;
+}
+
+#bg-principal{
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 15px; 
 }
