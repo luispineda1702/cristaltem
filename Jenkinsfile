@@ -1,31 +1,29 @@
 pipeline {
     agent any
-    
+
     stages {
         stage('Checkout') {
             steps {
-                echo "Obteniendo el código desde GitHub"
+                echo "Descargando el código del repositorio..."
                 checkout scm
             }
         }
 
         stage('Build') {
             steps {
-                echo "No hay build real porque es HTML, pero simulamos el proceso"
-                sh 'echo "Build completado correctamente"'
+                sh 'echo "Compilando proyecto HTML..."'
             }
         }
 
         stage('Test') {
             steps {
-                echo "No hay pruebas automáticas, pero simulamos un test"
-                sh 'echo "Test exitoso"'
+                sh 'echo "Ejecutando pruebas simuladas..."'
             }
         }
 
-        stage('Package') {
+        stage('Package Release') {
             steps {
-                echo "Empaquetando el proyecto en release.zip"
+                sh 'echo "Generando release..."'
                 sh 'zip -r release.zip .'
             }
         }
@@ -33,11 +31,11 @@ pipeline {
 
     post {
         success {
-            echo "Pipeline finalizado con éxito."
             archiveArtifacts artifacts: 'release.zip', fingerprint: true
+            echo "Release generado exitosamente."
         }
-    }
-    failure {
-        echo "Falló el release."
+        failure {
+            echo "Falló el pipeline."
+        }
     }
 }
